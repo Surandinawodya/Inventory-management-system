@@ -1,0 +1,61 @@
+.container.hospital1 {
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  
+  .card {
+    background: #e3e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  
+  .card-header {
+    background-color: #63075b;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .table th, .table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .table th {
+    background-color: #63075b;
+    color: white;
+    font-size: 0.9em;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .request-btn {
+    background-color: #63075b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .request-btn:hover {
+    background-color: #52024c;
+  }
+  
