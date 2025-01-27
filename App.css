@@ -1,170 +1,64 @@
-* {
+body, html {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
   box-sizing: border-box;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;      
-  background-size: cover;
-}
-/* Header Styles */
-
-.header5 {
-background-color: #63075b;
-padding: 20px 20px;
-display: flex;
-justify-content: space-between;
-z-index: 2;
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover;
 }
 
-.header5 img {
-height: 50px;
-}
-
-ul {
-list-style-type: none;
-margin: 0;
-padding: 0;
-}
-
-.header5-right {
-display: flex;
-align-items: center;
-margin-left: auto; /* This moves the right container to the far right */
-}
-
-.nav-list {
-display: flex;
-gap: 10px;
-}
-
-
-.nav-list a {
-color: white;
-text-decoration: none;
-display: block;
-padding: 10px;
-}
-
-.nav-list a:hover {
-background-color: #575757;
-}
-
-.task-manager {
-  padding: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  width: 100%;
-  box-sizing: border-box;
-}
-.dashboard-header {
-background-color: #f7f7f7; /* Light background for contrast */
-padding: 20px 20px;
-border-radius: 10px;
-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-margin-bottom: 10px; /* Space between the header and the task manager */
-text-align: center;
-}
-
-.dashboard-header h1 {
-font-size: 36px;
-font-weight: bold;
-color: #63075b; /* Primary color for the heading */
-margin-bottom: 10px; /* Space between heading and description */
-}
-.form-container {
+/* Header styles */
+.header {
+  background-color: #63075b;
+  padding: 20px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
 }
-form {
+
+.header img {
+  height: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
   display: flex;
   gap: 10px;
 }
-input {
-  height: 40px;
-  border-radius: 5px;
-  width: 250px;
+
+.nav-list li {
   text-align: center;
-  border: 1px solid #63075b;
-  box-shadow: 0 0 4px rgba(42, 157, 143, 0.5);
 }
-.add-btn, #search-bar {
-  padding: 10px 15px;
-  height: 40px;
-  font-size: 14px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-.add-btn {
-  background-color: #63075b;
+
+.nav-list a {
   color: white;
-}
-.add-btn:hover {
-  background-color: rgba(99,7,91,0.4);
-}
-#search-bar {
-  border: 1px solid #2a9d8f;
-  box-shadow: 0 0 4px #63075b;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 20px;
-  background-color: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-table thead {
-  background-color: #63075b;
-  color: white;
-}
-table th, table td {
+  text-decoration: none;
+  display: block;
   padding: 10px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
 }
-table tr:hover {
-  background-color: #f4f4f9;
+
+.nav-list a:hover {
+  background-color: #575757;
 }
-.edit-btn, .delete-btn {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 5px;
-  transition: background-color 0.3s ease;
-}
-.edit-btn {
-  background-color: rgba(99,7,91,0.4);
-  color: white;
-}
-.edit-btn:hover {
-  background-color: rgba(99,7,91,0.7);
-}
-.delete-btn {
-  background-color: rgba(99,7,91,0.4);
-  color: white;
-}
-.delete-btn:hover {
-  background-color:rgba(99,7,91,0.7);
-}
+
 /* Footer Section */
 .footer {
-width: 100%; /* Ensures the footer spans the entire screen width */
-position: relative; /* Keeps it in the flow of the document */
-background-color: #63075b;
-color: white;
-padding: 20px;
-box-sizing: border-box; /* Includes padding within width calculation */
+  background-color: #63075b;
+  color: white;
+  padding: 20px;
 }
 
 .footer-content {
@@ -179,10 +73,6 @@ box-sizing: border-box; /* Includes padding within width calculation */
   min-width: 200px;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;}
 .footer-section h3 {
   margin-bottom: 10px;
   font-size: 1.2rem;
@@ -207,4 +97,106 @@ ul {
 
 .footer-section a:hover {
   text-decoration: underline;
-}  
+}
+
+
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 10px;
+}
+
+.hero h1 {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.hero a {
+  padding: 10px 20px;
+  background-color: #f9d342;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero a:hover {
+  background-color: #e3c231;
+}
+
+/* Contact Section Styles */
+.contact-container {
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(225,225,225,0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-header h1 {
+  color: #333;
+}
+.contact-header p{
+    font-size: 17px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 98%;
+  padding: 10px;
+  border: 1px solid #63075b;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  font-size: 14px;
+}
+::placeholder {
+color: black;
+opacity: 1; /* Firefox */
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 100px;
+}
+
+.contact-form button {
+  
+background: rgba(99,7,91,0.6);
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: rgba(99,7,91,0.8);
+}
+
+ /* Main Content Styles */
+ main {
+  /*margin-left: 250px;*/ /* Default sidebar width */
+  
+  transition: margin-left 0.3s ease-in-out;
+ }
