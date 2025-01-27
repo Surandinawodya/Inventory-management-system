@@ -1,157 +1,156 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
-const Header = () => (
-  <header className="header5">
-    <div>
-      <img src="logo.jpg" alt="logo" width="50" height="30" />
-    </div>
-    <div className="header5-right">
-      <ul className="nav-list">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="ContactUs.html">Contact Us</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </div>
-  </header>
-);
+function App() {
+  const [items, setItems] = useState(() => {
+    // Initialize items from localStorage
+    const savedItems = localStorage.getItem("items");
+    return savedItems ? JSON.parse(savedItems) : [];
+  });
 
-const DashboardHeader = () => (
-  <div className="dashboard-header">
-    <h1>Supplier Details Management</h1>
-  </div>
-);
+  const [searchValue, setSearchValue] = useState("");
+  const [quantityFilter, setQuantityFilter] = useState("all");
+  const [formVisible, setFormVisible] = useState(false);
+  const [formData, setFormData] = useState({ id: "", name: "", quantity: "" });
 
-const TaskManager = () => {
-  const [suppliers, setSuppliers] = useState([
-    { id: "SUP001", name: "Supplier 01", email: "green.supplies@example.com", address: "123 Elm Street, New York" },
-    { id: "SUP002", name: "Supplier 02", email: "blue.ocean@example.com", address: "45 Pine Avenue, Los Angeles" },
-    { id: "SUP003", name: "Supplier 03", email: "eco.goods@example.com", address: "78 Maple Drive, Chicago" },
-    { id: "SUP004", name: "Supplier 04", email: "sunrise.ent@example.com", address: "12 Sunrise Blvd, Miami" },
-    { id: "SUP005", name: "Supplier 05", email: "pure.essentials@example.com", address: "90 Willow Way, Seattle" },
-  ]);
+  useEffect(() => {
+    // Save items to localStorage whenever items change
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
-  const [searchTerm, setSearchTerm] = useState("");
-  const [newSupplier, setNewSupplier] = useState({ name: "", email: "", address: "" });
+  // Filter items based on search and quantity filter
+  const filteredItems = items.filter((item) => {
+    const matchesSearch = item.name.toLowerCase().includes(searchValue.toLowerCase().trim());
 
-  const addSupplier = () => {
-    const newId = `SUP${Math.floor(Math.random() * 10000).toString().padStart(3, "0")}`;
-    setSuppliers([...suppliers, { id: newId, ...newSupplier }]);
-    setNewSupplier({ name: "", email: "", address: "" });
+    let matchesQuantity = true;
+    if (quantityFilter === "greater-than-10") {
+      matchesQuantity = item.quantity > 10;
+    } else if (quantityFilter === "less-than-5") {
+      matchesQuantity = item.quantity < 5;
+    }
+
+    return matchesSearch && matchesQuantity;
+  });
+
+  // Show the form for adding or editing an item
+  const showForm = (id = null) => {
+    if (id) {
+      const item = items.find((i) => i.id === id);
+      setFormData({ id: item.id, name: item.name, quantity: item.quantity });
+    } else {
+      setFormData({ id: "", name: "", quantity: "" });
+    }
+    setFormVisible(true);
   };
 
-  const filteredSuppliers = suppliers.filter((supplier) =>
-    Object.values(supplier).some((value) =>
-      value.toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  );
+  // Submit the form to add or edit an item
+  const submitForm = () => {
+    const { id, name, quantity } = formData;
+
+    if (!name || !quantity) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    if (id) {
+      // Update existing item
+      const updatedItems = items.map((item) =>
+        item.id === id ? { id, name, quantity: Number(quantity) } : item
+      );
+      setItems(updatedItems);
+    } else {
+      // Add a new item
+      const newId = items.length ? items[items.length - 1].id + 1 : 1;
+      setItems([...items, { id: newId, name, quantity: Number(quantity) }]);
+    }
+
+    setFormVisible(false);
+  };
 
   return (
-    <div className="task-manager">
-      <div className="form-container">
-        <form onSubmit={(e) => e.preventDefault()}>
-          <input
-            type="text"
-            placeholder="Supplier Name"
-            value={newSupplier.name}
-            onChange={(e) => setNewSupplier({ ...newSupplier, name: e.target.value })}
-            required
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            value={newSupplier.email}
-            onChange={(e) => setNewSupplier({ ...newSupplier, email: e.target.value })}
-            required
-          />
-          <input
-            type="text"
-            placeholder="Address"
-            value={newSupplier.address}
-            onChange={(e) => setNewSupplier({ ...newSupplier, address: e.target.value })}
-            required
-          />
-          <button type="button" className="add-btn" onClick={addSupplier}>
-            Add Supplier
-          </button>
-        </form>
-        <input
-          type="text"
-          id="search-bar"
-          placeholder="Search Supplier..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+    <div>
+      <header className="header5">
+        <div>
+          <img src="logo.jpg" alt="logo" width="50px" height="30px" />
+        </div>
+        <div className="header5-right">
+          <ul className="nav-list">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </header>
+
+      <div className="header">
+        <h1>User Dashboard</h1>
       </div>
 
-      <section id="employees">
+      <div className="container">
+        <div className="search-filter">
+          <input
+            type="text"
+            placeholder="Search items by name"
+            value={searchValue}
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+          <select value={quantityFilter} onChange={(e) => setQuantityFilter(e.target.value)}>
+            <option value="all">All Quantities</option>
+            <option value="greater-than-10">Greater than 10</option>
+            <option value="less-than-5">Less than 5</option>
+          </select>
+        </div>
+
         <table>
           <thead>
             <tr>
-              <th>Supplier ID</th>
-              <th>Supplier Name</th>
-              <th>Email</th>
-              <th>Address</th>
-              <th>Actions</th>
-              <th>Performance</th>
+              <th>Item ID</th>
+              <th>Item Name</th>
+              <th>Quantity</th>
             </tr>
           </thead>
           <tbody>
-            {filteredSuppliers.map((supplier) => (
-              <tr key={supplier.id}>
-                <td>{supplier.id}</td>
-                <td>{supplier.name}</td>
-                <td>{supplier.email}</td>
-                <td>{supplier.address}</td>
-                <td>
-                  <button className="edit-btn">Edit</button>
-                  <button className="delete-btn" onClick={() => setSuppliers(suppliers.filter(s => s.id !== supplier.id))}>Delete</button>
-                </td>
-                <td><button className="delete-btn">Upload Report</button></td>
+            {filteredItems.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>{item.name}</td>
+                <td>{item.quantity}</td>
               </tr>
             ))}
           </tbody>
         </table>
-      </section>
+
+        {formVisible && (
+          <div className="form-container">
+            <form onSubmit={(e) => e.preventDefault()}>
+              <input
+                type="hidden"
+                value={formData.id}
+              />
+              <input
+                type="text"
+                placeholder="Enter Item Name"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                required
+              />
+              <input
+                type="number"
+                placeholder="Enter Quantity"
+                value={formData.quantity}
+                onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
+                required
+              />
+              <button type="button" className="btn-submit" onClick={submitForm}>
+                Submit
+              </button>
+            </form>
+          </div>
+        )}
+      </div>
     </div>
   );
-};
-
-const Footer = () => (
-  <footer className="footer">
-    <div className="footer-content">
-      <div className="footer-section">
-        <h3>Hospital Inventory Management</h3>
-        <p>Streamlining hospital inventory for efficient and reliable healthcare delivery.</p>
-      </div>
-      <div className="footer-section">
-        <h3>Quick Access</h3>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="about.html">Dashboard</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="ContactUs.html">About Us</a></li>
-        </ul>
-      </div>
-      <div className="footer-section">
-        <h3>Get in Touch</h3>
-        <ul>
-          <li>Email: companyname@gmail.com</li>
-          <li>Phone: +94 78 345 2345</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
-);
-
-const App = () => (
-  <div className="app">
-    <Header />
-    <DashboardHeader />
-    <TaskManager />
-    <Footer />
-  </div>
-);
+}
 
 export default App;
