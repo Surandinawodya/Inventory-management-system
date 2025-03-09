@@ -1,0 +1,93 @@
+/* Supplier Table Styles */
+.supplier-table-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+  }
+  
+  .supplier-table-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .supplier-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+  }
+  
+  .supplier-table thead {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .supplier-table th, .supplier-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .supplier-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .supplier-table td {
+    color: #444;
+  }
+  
+  .supplier-table .action-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .supplier-table .edit-btn,
+  .supplier-table .delete-btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .supplier-table .edit-btn {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .supplier-table .delete-btn {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .supplier-table .edit-btn:hover {
+    background-color: #218838;
+  }
+  
+  .supplier-table .delete-btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .supplier-table-container {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .supplier-table th, .supplier-table td {
+      padding: 10px;
+      font-size: 14px;
+    }
+  
+    .supplier-table .edit-btn,
+    .supplier-table .delete-btn {
+      font-size: 12px;
+      padding: 5px 8px;
+    }
+  }
+  
