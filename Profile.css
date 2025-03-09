@@ -1,0 +1,47 @@
+
+.container-prof {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #63075b;
+}
+
+.card-prof {
+  background: #cdcccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  text-align: center;
+}
+
+.profile-header {
+  background-color: #63075b;
+  padding: 10px;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  border: none;
+  background-color: #fff;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.p1 {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #333;
+}
+
+.p1 strong {
+  color: #63075b;
+}
+
