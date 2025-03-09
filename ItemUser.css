@@ -1,0 +1,70 @@
+
+  .header1 h1{
+    background-color: white;
+    color: #63075b;
+    text-align: center;
+    padding: 20px ;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 0px;
+  }
+  .container-iu {
+    max-width: 900px;
+    margin: 40px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  .container-iu h2 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    color: #63075b;
+  }
+  
+  .search-filter {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .search-filter input, .search-filter select {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+  }
+  
+  .search-filter input:focus, .search-filter select:focus {
+    border-color: #63075b;
+    outline: none;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    
+  }
+  
+  table th, table td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  table th {
+    background-color: #63075b;
+    color: white;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+ 
