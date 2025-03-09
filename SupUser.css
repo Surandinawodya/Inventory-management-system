@@ -1,0 +1,113 @@
+  .task-manager-su {
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    width:900px;
+    margin: auto; 
+  margin-bottom: 20px;;
+  }
+  .dashboard-header-su {
+    background-color: #f7f7f7; 
+    padding:2px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+
+.dashboard-header-su h1 {
+font-size: 36px;
+font-weight: bold;
+color: #63075b; /* Primary color for the heading */
+margin-bottom: 10px; /* Space between heading and description */
+
+}
+
+  .form-container-su {
+    display: flex;
+    
+    align-items: center;
+    margin-bottom: 20px;
+   
+  }
+  form {
+    display: flex;
+    gap: 10px;
+  }
+  input {
+    height: 40px;
+    border-radius: 5px;
+    width: 250px;
+    text-align: center;
+    border: 1px solid #63075b;
+    box-shadow: 0 0 4px rgba(42, 157, 143, 0.5);
+  }
+  .add-btn, #search-bar {
+    padding: 10px 15px;
+    height: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .add-btn {
+    background-color: #63075b;
+    color: white;
+  }
+  .add-btn:hover {
+    background-color: rgba(99,7,91,0.4);
+  }
+  #search-bar {
+    border: 1px solid #2a9d8f;
+    box-shadow: 0 0 4px #63075b;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  table thead {
+    background-color: #63075b;
+    color: white;
+  }
+  table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  table tr:hover {
+    background-color: #f4f4f9;
+  }
+  .edit-btn, .delete-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .edit-btn {
+    background-color: rgba(99,7,91,0.4);
+    color: white;
+  }
+  .edit-btn:hover {
+    background-color: rgba(99,7,91,0.7);
+  }
+  .delete-btn {
+    background-color: rgba(99,7,91,0.4);
+    color: white;
+  }
+  .delete-btn:hover {
+    background-color:rgba(99,7,91,0.7);
+  }
