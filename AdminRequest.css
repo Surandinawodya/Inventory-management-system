@@ -1,0 +1,123 @@
+
+  
+  /* Container for full-page layout */
+  .admin-container {
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  /* Hero Section */
+  .hero-re {
+    text-align: center;
+    padding: 40px 20px;
+    width: 100%;
+  }
+  
+  .hero-re h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Notification Container */
+  .notification-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 25px;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .notification-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .notification-header h2 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .notification-header button {
+    background-color: #63075b;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .notification-header button:hover {
+    background-color: #7a2673;
+  }
+  
+  /* Notification Items */
+  .notification-list {
+    margin-top: 20px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .notification-item {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .notification-item.new {
+    background: rgba(99, 7, 91, 0.1);
+    border-left: 5px solid #430541;
+  }
+  
+  .notification-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .notification-item h3 {
+    margin: 0 0 8px 0;
+    font-size: 20px;
+  }
+  
+  .notification-item p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .notification-container {
+      width: 90%;
+    }
+  
+    .hero h1 {
+      font-size: 22px;
+    }
+  
+    .notification-item {
+      padding: 15px;
+    }
+  
+    .notification-header h2 {
+      font-size: 20px;
+    }
+  
+    .notification-header button {
+      font-size: 14px;
+      padding: 8px 12px;
+    }
+  }
+  
