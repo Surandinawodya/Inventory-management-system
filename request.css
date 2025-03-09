@@ -1,0 +1,100 @@
+
+/* Hero section */
+.hero {
+  text-align: center;
+  padding: 10px;
+}
+
+.hero h1 {
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+}
+
+.hero a {
+  padding: 10px 20px;
+  background-color: #f9d342;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.hero a:hover {
+  background-color: #e3c231;
+}
+
+/* Contact Section Styles */
+.request-container {
+ max-width: 700px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(225, 225, 225, 0.4);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+.request-form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.request-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.request-header h1 {
+  color: #333;
+}
+.request-header p {
+  font-size: 17px;
+}
+
+.request-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  width: 98%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #63075b;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  font-size: 14px;
+}
+::placeholder {
+  color: black;
+  opacity: 1; /* Firefox */
+}
+.request-form textarea {
+  resize: vertical;
+}
+
+.request-form button {
+  background: rgba(99, 7, 91, 0.4);
+  color: black;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.request-form button:hover {
+  background: rgba(99, 7, 91, 0.7);
+}
+
+/* Main Content Styles */
+main {
+  /*margin-left: 250px;*/ /* Default sidebar width */
+
+  transition: margin-left 0.3s ease-in-out;
+}
